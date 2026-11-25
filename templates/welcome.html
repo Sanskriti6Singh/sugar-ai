@@ -7,32 +7,44 @@
 {% endblock %}
 
 {% block header %}
-<header>
+<header class="site-header">
   <div class="container header-container">
-    <div class="logo">
-      <h1>Sugar-AI</h1>
-      <p>An AI-powered coding assistant for the Sugar Learning Platform</p>
-    </div>
+    <a href="/" class="logo" aria-label="Sugar-AI Home">
+      <h1><span class="logo-sugar">sugar-</span><span class="logo-ai">AI</span></h1>
+      <span class="sr-only">An AI-powered coding assistant for the Sugar Learning Platform</span>
+    </a>
+
+    <nav class="page-nav" aria-label="Section navigation">
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#use-cases">Use Cases</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#api">API Usage</a></li>
+        <li><a href="#docs">API Documentation</a></li>
+      </ul>
+    </nav>
+
     <div class="nav-buttons">
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" aria-pressed="false">
+        <span class="theme-option sun active" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+        </span>
+        <span class="theme-option moon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+        </span>
+      </button>
+
       <a href="/oauth-login" class="nav-btn">Sign in with OAuth</a>
       <a href="/admin-login" class="nav-btn">API Key Login</a>
       <a href="/request-key" class="nav-btn primary">Request API Key</a>
     </div>
   </div>
 </header>
-
-
-<nav class="page-nav">
-  <div class="container">
-    <ul>
-      <li><a href="#overview">Overview</a></li>
-      <li><a href="#use-cases">Use Cases</a></li>
-      <li><a href="#dashboard">Dashboard</a></li>
-      <li><a href="#api">API Usage</a></li>
-      <li><a href="#docs">API Documentation</a></li>
-    </ul>
-  </div>
-</nav>
 {% endblock %}
 
 {% block content %}

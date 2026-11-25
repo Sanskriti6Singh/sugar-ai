@@ -4,23 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Sugar-AI{% endblock %}</title>
-    
+
+    <!-- Fonts: Clean sans for body/'sugar-' + creative serif for 'AI' -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Common CSS -->
     <link rel="stylesheet" href="{{ url_for('static', path='css/common.css') }}">
-    
+
     <!-- Page-specific CSS -->
     {% block css %}{% endblock %}
-    
+
     <!-- Additional head content -->
     {% block head %}{% endblock %}
 </head>
 <body>
     <!-- Header Section -->
     {% block header %}{% endblock %}
-    
+
     <!-- Main Content -->
     {% block content %}{% endblock %}
-    
+
     <!-- Footer Section -->
     {% block footer %}
     <footer>
@@ -35,10 +40,10 @@
         </div>
     </footer>
     {% endblock %}
-    
+
     <!-- Common JavaScript -->
     <script src="{{ url_for('static', path='js/common.js') }}"></script>
-    
+
     <!-- Page-specific JavaScript -->
     {% block js %}{% endblock %}
 </body>
