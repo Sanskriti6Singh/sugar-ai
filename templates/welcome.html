@@ -48,20 +48,42 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-  <section id="overview" class="hero">
-    <h2>Welcome to Sugar-AI</h2>
-    <p>
-      Sugar-AI is a specialized coding assistant designed to help children
-      learn programming with the Sugar Learning Platform. It uses advanced
-      AI to provide child-friendly explanations and code examples.
-    </p>
-    <div class="hero-buttons">
-      <a href="/request-key" class="btn btn-accent">Get Started</a>
-      <a href="https://github.com/sugarlabs/sugar-ai" class="btn">View on GitHub</a>
-    </div>
-  </section>
+<div class="hero-bg-wrapper">
+  <!-- Soft editorial graph background on the left -->
+  <div class="hero-editorial-bg" aria-hidden="true"></div>
 
+  <div class="container hero-container-inner">
+    <section id="overview" class="hero hero-split">
+      <div class="hero-left-spacer" aria-hidden="true"></div>
+
+      <div class="hero-content-right">
+        <span class="hero-label-badge">
+          <span class="bullet" aria-hidden="true">●</span> An AI-powered coding assistant for the Sugar Learning Platform
+        </span>
+
+        <h2 class="hero-title">
+          <span class="hero-welcome-small">Welcome to</span>
+          <span class="hero-brand-line">
+            <span class="logo-sugar">sugar-</span><span class="logo-ai-pop">AI</span>
+          </span>
+        </h2>
+
+        <p class="hero-desc">
+          Sugar-AI is a specialized coding assistant designed to help children
+          learn programming with the Sugar Learning Platform. It uses advanced
+          AI to provide child-friendly explanations and code examples.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="/request-key" class="btn-primary-pill">Get Started</a>
+          <a href="https://github.com/sugarlabs/sugar-ai" class="btn-outline-pill">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="container">
   <h2 id="use-cases" class="section-title">How Sugar-AI Can Help You</h2>
 
   <div class="card-grid">
@@ -223,9 +245,9 @@ print(result["answer"])
           <td style="padding: 12px;">RAG-enabled answers</td>
           <td style="padding: 12px;">Query parameter</td>
           <td style="padding: 12px;">
-            • Retrieval-Augmented Generation<br>
-            • Sugar/Pygame/GTK documentation<br>
-            • Child-friendly responses
+- Retrieval-Augmented Generation<br>
+- Sugar/Pygame/GTK documentation<br>
+- Child-friendly responses
           </td>
         </tr>
         <tr style="border-bottom: 1px solid #eee;">
@@ -233,9 +255,9 @@ print(result["answer"])
           <td style="padding: 12px;">Direct LLM without RAG</td>
           <td style="padding: 12px;">Query parameter</td>
           <td style="padding: 12px;">
-            • No document retrieval<br>
-            • Direct model access<br>
-            • Faster responses
+- No document retrieval<br>
+- Direct model access<br>
+- Faster responses
           </td>
         </tr>
         <tr style="border-bottom: 1px solid #eee;">
@@ -243,9 +265,9 @@ print(result["answer"])
           <td style="padding: 12px;">Custom prompt with advanced controls</td>
           <td style="padding: 12px;">JSON body</td>
           <td style="padding: 12px;">
-            • Custom system prompts<br>
-            • Configurable generation parameters<br>
-            • Maximum flexibility
+- Custom system prompts<br>
+- Configurable generation parameters<br>
+- Maximum flexibility
           </td>
         </tr>
         <tr>
@@ -253,9 +275,9 @@ print(result["answer"])
           <td style="padding: 12px;">Python code debugging</td>
           <td style="padding: 12px;">Query parameters</td>
           <td style="padding: 12px;">
-            • Kid-friendly debugging suggestions<br>
-            • Context mode for explanations<br>
-            • Educational focus
+- Kid-friendly debugging suggestions<br>
+- Context mode for explanations<br>
+- Educational focus
           </td>
         </tr>
       </tbody>
@@ -288,7 +310,7 @@ print(result["answer"])
   </div>
   
   <div class="documentation-section">
-    <h2 h2 id="docs" class="section-title">API Endpoints Documentation</h2>
+    <h2 id="docs" class="section-title">API Endpoints Documentation</h2>
     
     <div class="endpoint">
       <h3>Ask Question (RAG Enhanced)</h3>
@@ -518,8 +540,6 @@ Content-Type: application/json</pre>
       </div>
     </div>
     
-   
-    
     <div class="endpoint admin-only">
       <h3>Change Model (Admin Only)</h3>
       <div class="endpoint-method">POST</div>
@@ -529,8 +549,6 @@ Content-Type: application/json</pre>
       <div class="endpoint-details">
         <h4>Example Request:</h4>
         <pre>curl -X POST "http://localhost:8000/change-model?model=Qwen/Qwen2-1.5B-Instruct&api_key=admin_key&password=admin_password"</pre>
-        
-       
         </ul>
       </div>
     </div>
