@@ -406,19 +406,109 @@ body {
 }
 
 /* Bottom-Left Cutout Notch with Slanted Typographic Stripes */
+/* Smooth bottom-left radius on hero card above the cutout */
+.hero-main-card {
+  position: relative;
+  background: var(--hero-card-surface);
+  border-radius: 28px;
+  border-bottom-left-radius: 38px;
+  padding: 3.25rem 3.75rem 8.5rem;
+  min-height: 510px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 12px 32px -12px rgba(15, 23, 42, 0.08);
+}
+
+/* Bottom-Left Cutout Notch with Static "used by" & Infinite Logo Marquee */
 .hero-notch-cutout {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 46%;
-  height: 102px;
+  width: 47%;
+  min-height: 112px;
   background-color: var(--hero-page-bg);
-  border-top-right-radius: 26px;
+  border-top-right-radius: 28px;
   z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.9rem 1.5rem 0.65rem 1.75rem;
+  box-sizing: border-box;
   overflow: hidden;
+}
+
+.used-by-label {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: var(--hero-subtext-color);
+  opacity: 0.78;
+  user-select: none;
+}
+
+.logo-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+}
+
+.logo-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: sugarLogoMarquee 18s linear infinite;
+}
+
+.logo-marquee:hover .logo-marquee-track {
+  animation-play-state: paused;
+}
+
+.logo-marquee-group {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 1.75rem;
+  padding-right: 1.75rem;
+  flex-shrink: 0;
+}
+
+.marquee-logo-img {
+  display: block;
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+@keyframes sugarLogoMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee-track {
+    animation: none;
+  }
 }
 
 .hero-slant-pattern {
@@ -1519,8 +1609,16 @@ footer {
   }
 
   .hero-notch-cutout {
-    width: 52%;
-    height: 92px;
+   .hero-notch-cutout {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+    min-height: auto;
+    border-top-right-radius: 0;
+    padding: 1.25rem 0.5rem 0;
+    align-items: center;
+  }
   }
 
   .page-nav {

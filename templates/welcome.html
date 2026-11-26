@@ -87,18 +87,26 @@
         </div>
       </div>
 
-      <!-- Bottom-Left Cutout Notch with Horizontal Integration List -->
+      <!-- Bottom-Left Cutout Notch with Static "used by" & Infinite Logo Marquee -->
       <div class="hero-notch-cutout">
-        <div class="hero-used-in-row">
-          <span class="used-in-label">Used in:</span>
-          <span class="used-in-item">Music Blogs</span>
-          <span class="used-in-dot" aria-hidden="true">&bull;</span>
-          <span class="used-in-item">Speak AI</span>
-          <span class="used-in-dot" aria-hidden="true">&bull;</span>
-          <span class="used-in-item">Turtle Blogs</span>
+        <span class="used-by-label">used by</span>
+        <div class="logo-marquee" aria-label="Used by Music Blocks">
+          <div class="logo-marquee-track">
+            <div class="logo-marquee-group">
+              <img src="{{ url_for('static', path='images/music-blocks-logo.png') }}" alt="Music Blocks" class="marquee-logo-img" />
+              <img src="{{ url_for('static', path='images/music-blocks-logo.png') }}" alt="Music Blocks" class="marquee-logo-img" />
+              <img src="{{ url_for('static', path='images/music-blocks-logo.png') }}" alt="Music Blocks" class="marquee-logo-img" />
+              <img src="{{ url_for('static', path='images/music-blocks-logo.png') }}" alt="Music Blocks" class="marquee-logo-img" />
+            </div>
+            <div class="logo-marquee-group" aria-hidden="true">
+              <img src="{{ url_for('static', path='images/music-blocks-logo.png') }}" alt="" class="marquee-logo-img" />
+              <img src="{{ url_for('static', path='images/music-blocks-logo.png') }}" alt="" class="marquee-logo-img" />
+              <img src="{{ url_for('static', path='images/music-blocks-logo.png') }}" alt="" class="marquee-logo-img" />
+              <img src="{{ url_for('static', path='images/music-blocks-logo.png') }}" alt="" class="marquee-logo-img" />
+            </div>
+          </div>
         </div>
       </div>
-
       <!-- Robot Popping Over the Top Edge Toward the Navbar -->
       <div class="hero-robot-layer" aria-hidden="true">
         <img
