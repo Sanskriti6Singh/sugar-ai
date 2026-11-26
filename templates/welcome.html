@@ -48,40 +48,68 @@
 {% endblock %}
 
 {% block content %}
-<div class="hero-bg-wrapper">
-  <!-- Soft editorial graph background on the left -->
-  <div class="hero-editorial-bg" aria-hidden="true"></div>
-
-  <div class="container hero-container-inner">
-    <section id="overview" class="hero hero-split">
-      <div class="hero-left-spacer" aria-hidden="true"></div>
-
-      <div class="hero-content-right">
-        <span class="hero-label-badge">
-          <span class="bullet" aria-hidden="true">●</span> An AI-powered coding assistant for the Sugar Learning Platform
-        </span>
-
-        <h2 class="hero-title">
-          <span class="hero-welcome-small">Welcome to</span>
-          <span class="hero-brand-line">
-            <span class="logo-sugar">sugar-</span><span class="logo-ai-pop">AI</span>
+<section id="overview" class="hero-showcase-section">
+  <div class="hero-showcase-container">
+    <div class="hero-card-shell">
+      <!-- Rounded Slate-Blue Hero Card -->
+      <div class="hero-main-card">
+        <div class="hero-text-col">
+          <span class="hero-pill-tag">
+            An AI-powered coding assistant for the Sugar Learning Platform
           </span>
-        </h2>
 
-        <p class="hero-desc">
-          Sugar-AI is a specialized coding assistant designed to help children
-          learn programming with the Sugar Learning Platform. It uses advanced
-          AI to provide child-friendly explanations and code examples.
-        </p>
+          <h2 class="hero-display-heading">
+            <span class="hero-welcome-med">Welcome to</span>
+            <span class="hero-brand-huge">
+              <span class="brand-sugar">sugar-</span><span class="brand-ai">AI</span>
+            </span>
+          </h2>
 
-        <div class="hero-buttons">
-          <a href="/request-key" class="btn-primary-pill">Get Started</a>
-          <a href="https://github.com/sugarlabs/sugar-ai" class="btn-outline-pill">View on GitHub</a>
+          <p class="hero-subtext">
+            Sugar-AI is a specialized coding assistant designed to help children
+            learn programming with the Sugar Learning Platform. It uses advanced
+            AI to provide child-friendly explanations and code examples.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="/request-key" class="hero-btn-blue">
+              Get Started <span aria-hidden="true">&rarr;</span>
+            </a>
+            <a
+              href="https://github.com/sugarlabs/sugar-ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hero-btn-dark"
+            >
+              View on GitHub
+            </a>
+          </div>
         </div>
       </div>
-    </section>
+
+      <!-- Bottom-Left Cutout Notch with Horizontal Integration List -->
+      <div class="hero-notch-cutout">
+        <div class="hero-used-in-row">
+          <span class="used-in-label">Used in:</span>
+          <span class="used-in-item">Music Blogs</span>
+          <span class="used-in-dot" aria-hidden="true">&bull;</span>
+          <span class="used-in-item">Speak AI</span>
+          <span class="used-in-dot" aria-hidden="true">&bull;</span>
+          <span class="used-in-item">Turtle Blogs</span>
+        </div>
+      </div>
+
+      <!-- Robot Popping Over the Top Edge Toward the Navbar -->
+      <div class="hero-robot-layer" aria-hidden="true">
+        <img
+          src="{{ url_for('static', path='images/hero-robot.png') }}"
+          alt=""
+          class="hero-robot-cutout"
+        />
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
 <!-- How Sugar-AI Can Help You -->
 <section id="use-cases" class="editorial-section">
@@ -96,7 +124,14 @@
 
     <div class="use-cases-grid">
       <!-- Card 1: For Students & Teachers -->
-      <article class="use-case-card">
+      <article class="use-case-card use-case-card--students">
+        <div
+          class="use-case-card-bg"
+          style="--card-bg-img: url('{{ url_for('static', path='images/use-cases/students-teachers.png') }}');"
+          aria-hidden="true"
+        ></div>
+        <div class="use-case-card-scrim" aria-hidden="true"></div>
+
         <div class="use-case-card-body">
           <div class="use-case-card-header">
             <span class="use-case-icon-badge badge-indigo" aria-hidden="true">
@@ -126,7 +161,14 @@
       </article>
 
       <!-- Card 2: For Developers -->
-      <article class="use-case-card">
+      <article class="use-case-card use-case-card--developers">
+        <div
+          class="use-case-card-bg"
+          style="--card-bg-img: url('{{ url_for('static', path='images/use-cases/developers.png') }}');"
+          aria-hidden="true"
+        ></div>
+        <div class="use-case-card-scrim" aria-hidden="true"></div>
+
         <div class="use-case-card-body">
           <div class="use-case-card-header">
             <span class="use-case-icon-badge badge-mint" aria-hidden="true">
@@ -153,7 +195,14 @@
       </article>
 
       <!-- Card 3: For Administrators -->
-      <article class="use-case-card">
+      <article class="use-case-card use-case-card--admins">
+        <div
+          class="use-case-card-bg"
+          style="--card-bg-img: url('{{ url_for('static', path='images/use-cases/administrators.png') }}');"
+          aria-hidden="true"
+        ></div>
+        <div class="use-case-card-scrim" aria-hidden="true"></div>
+
         <div class="use-case-card-body">
           <div class="use-case-card-header">
             <span class="use-case-icon-badge badge-amber" aria-hidden="true">
@@ -392,9 +441,9 @@ result = response.json()
                 <td>RAG-enabled answers</td>
                 <td>Query parameter</td>
                 <td>
-                  - Retrieval-Augmented Generation<br>
-                  - Sugar/Pygame/GTK documentation<br>
-                  - Child-friendly responses
+- Retrieval-Augmented Generation<br>
+- Sugar/Pygame/GTK documentation<br>
+- Child-friendly responses
                 </td>
               </tr>
               <tr>
@@ -402,9 +451,9 @@ result = response.json()
                 <td>Direct LLM without RAG</td>
                 <td>Query parameter</td>
                 <td>
-                  - No document retrieval<br>
-                  - Direct model access<br>
-                  - Faster responses
+- No document retrieval<br>
+- Direct model access<br>
+- Faster responses
                 </td>
               </tr>
               <tr>
@@ -412,9 +461,9 @@ result = response.json()
                 <td>Custom prompt with advanced controls</td>
                 <td>JSON body</td>
                 <td>
-                  - Custom system prompts<br>
-                  - Configurable generation parameters<br>
-                  - Maximum flexibility
+- Custom system prompts<br>
+- Configurable generation parameters<br>
+- Maximum flexibility
                 </td>
               </tr>
               <tr>
@@ -422,9 +471,9 @@ result = response.json()
                 <td>Python code debugging</td>
                 <td>Query parameters</td>
                 <td>
-                  - Kid-friendly debugging suggestions<br>
-                  - Context mode for explanations<br>
-                  - Educational focus
+- Kid-friendly debugging suggestions<br>
+- Context mode for explanations<br>
+- Educational focus
                 </td>
               </tr>
             </tbody>
